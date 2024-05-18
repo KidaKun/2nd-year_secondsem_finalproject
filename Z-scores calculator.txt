@@ -1,0 +1,3297 @@
+print("\n\n\t\t\t\t\t\tThis is a z-score calculator. Below is a z-score table.")
+
+print("\n\n\t\tz\t\t.00\t\t.01\t\t.02\t\t.03\t\t.04\t\t.05\t\t.06\t\t.07\t\t.08\t\t.09\n\t\t0.0\t\t.0000\t.0040\t.0080\t.0120\t.0160\t.0199\t.0239\t.0279\t.0319\t.0359\n\t\t0.1\t\t.0398\t.0438\t.0478\t.0517\t.0557\t.0596\t.0636\t.0675\t.0714\t.0753\n\t\t0.2\t\t.0793\t.0832\t.0871\t.0910\t.0948\t.0987\t.1026\t.1064\t.1103\t.1141\n\t\t0.3\t\t.1179\t.1217\t.1255\t.1293\t.1331\t.1368\t.1406\t.1443\t.1480\t.1517\n\t\t0.4\t\t.1554\t.1591\t.1628\t.1664\t.1700\t.1736\t.1772\t.1808\t.1844\t.1879\n\t\t0.5\t\t.1915\t.1950\t.1985\t.2019\t.2054\t.2088\t.2123\t.2157\t.2190\t.2224\n\t\t0.6\t\t.2257\t.2291\t.2324\t.2357\t.2389\t.2422\t.2454\t.2486\t.2517\t.2549\n\t\t0.7\t\t.2580\t.2611\t.2642\t.2673\t.2704\t.2734\t.2764\t.2794\t.2823\t.2852\n\t\t0.8\t\t.2881\t.2910\t.2939\t.2967\t.2995\t.3023\t.3051\t.3078\t.3106\t.3133\n\t\t0.9\t\t.3159\t.3186\t.3212\t.3238\t.3264\t.3289\t.3315\t.3340\t.3365\t.3389\n\t\t1.0\t\t.3413\t.3438\t.3461\t.3485\t.3508\t.3531\t.3554\t.3577\t.3599\t.3621\n\t\t1.1\t\t.3643\t.3665\t.3686\t.3708\t.3729\t.3749\t.3770\t.3790\t.3810\t.3830\n\t\t1.2\t\t.3849\t.3869\t.3888\t.3907\t.3925\t.3944\t.3962\t.3980\t.3997\t.4015\n\t\t1.3\t\t.4032\t.4049\t.4066\t.4082\t.4099\t.4115\t.4131\t.4147\t.4162\t.4177\n\t\t1.4\t\t.4192\t.4207\t.4222\t.4236\t.4251\t.4265\t.4279\t.4292\t.4306\t.4319\n\t\t1.5\t\t.4332\t.4345\t.4357\t.4370\t.4382\t.4394\t.4406\t.4418\t.4429\t.4441\n\t\t1.6\t\t.4452\t.4463\t.4474\t.4484\t.4495\t.4505\t.4515\t.4525\t.4535\t.4545\n\t\t1.7\t\t.4554\t.4564\t.4573\t.4582\t.4591\t.4599\t.4608\t.4616\t.4625\t.4633\n\t\t1.8\t\t.4641\t.4649\t.4656\t.4664\t.4671\t.4678\t.4686\t.4693\t.4699\t.4706\n\t\t1.9\t\t.4713\t.4719\t.4726\t.4732\t.4738\t.4744\t.4750\t.4756\t.4761\t.4767\n\t\t2.0\t\t.4772\t.4778\t.4783\t.4788\t.4793\t.4798\t.4803\t.4808\t.4812\t.4817\n\t\t2.1\t\t.4821\t.4826\t.4830\t.4834\t.4838\t.4842\t.4846\t.4850\t.4854\t.4857\n\t\t2.2\t\t.4861\t.4864\t.4868\t.4871\t.4875\t.4878\t.4881\t.4884\t.4887\t.4890\n\t\t2.3\t\t.4893\t.4896\t.4898\t.4901\t.4904\t.4906\t.4909\t.4911\t.4913\t.4916\n\t\t2.4\t\t.4918\t.4920\t.4922\t.4925\t.4927\t.4929\t.4931\t.4932\t.4934\t.4936\n\t\t2.5\t\t.4938\t.4940\t.4941\t.4943\t.4945\t.4946\t.4948\t.4949\t.4951\t.4952\n\t\t2.6\t\t.4953\t.4955\t.4956\t.4957\t.4959\t.4960\t.4961\t.4962\t.4963\t.4964\n\t\t2.7\t\t.4965\t.4966\t.4967\t.4968\t.4969\t.4970\t.4971\t.4972\t.4973\t.4974\n\t\t2.8\t\t.4974\t.4975\t.4976\t.4977\t.4977\t.4978\t.4979\t.4979\t.4980\t.4981\n\t\t2.9\t\t.4981\t.4982\t.4982\t.4983\t.4984\t.4984\t.4985\t.4985\t.4986\t.4986\n\t\t3.0\t\t.4987\t.4987\t.4987\t.4988\t.4988\t.4989\t.4989\t.4989\t.4990\t.4990\n\t\t3.1\t\t.4990\t.4991\t.4991\t.4991\t.4992\t.4992\t.4992\t.4992\t.4993\t.4993\n\t\t3.2\t\t.4993\t.4993\t.4994\t.4994\t.4994\t.4994\t.4994\t.4995\t.4995\t.4995\n\t\t3.3\t\t.4995\t.4995\t.4995\t.4996\t.4996\t.4996\t.4996\t.4996\t.4996\t.4997\n\t\t3.4\t\t.4997\t.4997\t.4997\t.4997\t.4997\t.4997\t.4997\t.4997\t.4997\t.4998\n\t\t3.5\t\t.4998\t.4998\t.4998\t.4998\t.4998\t.4998\t.4998\t.4998\t.4998\t.4998\n\t\t3.6\t\t.4998\t.4998\t.4998\t.4999\t.4999\t.4999\t.4999\t.4999\t.4999\t.4999")
+
+print("\nPlease insert the following variables needed to continue.")
+rawscore=eval(input("\n­Enter Raw Score: "))
+mean=eval(input("Ente­r Mean: "))
+sd=eval(input("Enter Standard Deviation: "))
+
+zscore_1=(rawscore-mean)/sd
+zscore=round(zscore_1, 2)
+
+rawscore_1=mean+(zscore_1*sd)
+rawscore_2=round(rawscore_1, 2)
+
+
+print("\n\n\n\t\t\t\t\t\t\t\t\t\tRAW SCORE TO Z-SCORE: ")
+print("Formula: ")
+print("z = (x-μ)/σ")
+print("\nSolution: ")
+print(rawscore, "-", mean, "/", sd, "=", zscore)
+print("\nz-score: ", zscore)
+
+if zscore == 0.00:
+    print("Area: ", .0000)
+    percent=round(.0000*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.01 or zscore == -0.01:
+    print("Area: ", .0040)
+    percent=round(.0040*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.02 or zscore == -0.02:
+    print("Area: ", .0080)
+    percent=round(.0080*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.03 or zscore == -0.03:
+    print("Area: ", .0120)
+    percent=round(.0120*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.04 or zscore == -0.04:
+    print("Area: ", .0160)
+    percent=round(.0160*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.05 or zscore == -0.05:
+    print("Area: ", .0199)
+    percent=round(.0199*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.06 or zscore == -0.06:
+    print("Area: ", .0239)
+    percent=round(.0239*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.07 or zscore == -0.07:
+    print("Area: ", .0279)
+    percent=round(.0279*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.08 or zscore == -0.08:
+    print("Area: ", .0319)
+    percent=round(.0319*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.09 or zscore == -0.09:
+    print("Area: ", .0359)
+    percent=round(.0359*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.10 or zscore == -0.10:
+    print("Area: ", .0398)
+    percent=round(.0398*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.11 or zscore == -0.11:
+    print("Area: ", .0438)
+    percent=round(.0438*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.12 or zscore == -0.12:
+    print("Area: ", .0478)
+    percent=round(.0478*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.13 or zscore == -0.13:
+    print("Area: ", .0517)
+    percent=round(.0517*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.14 or zscore == -0.14:
+    print("Area: ", .0557)
+    percent=round(.0557*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.15 or zscore == -0.15:
+    print("Area: ", .0596)
+    percent=round(.0596*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.16 or zscore == -0.16:
+    print("Area: ", .0636)
+    percent=round(.0636*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.17 or zscore == -0.17:
+    print("Area: ", .0675)
+    percent=round(.0675*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.18 or zscore == -0.18:
+    print("Area: ", .0714)
+    percent=round(.0714*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.19 or zscore == -0.19:
+    print("Area: ", .0753)
+    percent=round(.0753*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.20 or zscore == -0.20:
+    print("Area: ", .0793)
+    percent=round(.0793*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.21 or zscore == -0.21:
+    print("Area: ", .0832)
+    percent=round(.0832*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.22 or zscore == -0.22:
+    print("Area: ", .0871)
+    percent=round(.0871*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.23 or zscore == -0.23:
+    print("Area: ", .0910)
+    percent=round(.0910*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.24 or zscore == -0.24:
+    print("Area: ", .0948)
+    percent=round(.0948*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.25 or zscore == -0.25:
+    print("Area: ", .0987)
+    percent=round(.0987*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.26 or zscore == -0.26:
+    print("Area: ", .1026)
+    percent=round(.1026*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.27 or zscore == -0.27:
+    print("Area: ", .1064)
+    percent=round(.1064*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.28 or zscore == -0.28:
+    print("Area: ", .1103)
+    percent=round(.1103*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.29 or zscore == -0.29:
+    print("Area: ", .1141)
+    percent=round(.1141*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.30 or zscore == -0.30:
+    print("Area: ", .1179)
+    percent=round(.1179*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.31 or zscore == -0.31:
+    print("Area: ", .1217)
+    percent=round(.1217*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.32 or zscore == -0.32:
+    print("Area: ", .1255)
+    percent=round(.1255*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.33 or zscore == -0.33:
+    print("Area: ", .1293)
+    percent=round(.1293*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.34 or zscore == -0.34:
+    print("Area: ", .1331)
+    percent=round(.1331*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.35 or zscore == -0.35:
+    print("Area: ", .1368)
+    percent=round(.1368*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.36 or zscore == -0.36:
+    print("Area: ", .1406)
+    percent=round(.1406*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.37 or zscore == -0.37:
+    print("Area: ", .1443)
+    percent=round(.1443*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.38 or zscore == -0.38:
+    print("Area: ", .1480)
+    percent=round(.1480*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.39 or zscore == -0.39:
+    print("Area: ", .1517)
+    percent=round(.1517*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.40 or zscore == -0.40:
+    print("Area: ", .1554)
+    percent=round(.1554*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.41 or zscore == -0.41:
+    print("Area: ", .1591)
+    percent=round(.1591*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.42 or zscore == -0.42:
+    print("Area: ", .1628)
+    percent=round(.1628*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.43 or zscore == -0.43:
+    print("Area: ", .1664)
+    percent=round(.1664*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.44 or zscore == -0.44:
+    print("Area: ", .1700)
+    percent=round(.1700*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.45 or zscore == -0.45:
+    print("Area: ", .1736)
+    percent=round(.1736*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.46 or zscore == -0.46:
+    print("Area: ", .1772)
+    percent=round(.1772*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.47 or zscore == -0.47:
+    print("Area: ", .1808)
+    percent=round(.1808*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.48 or zscore == -0.48:
+    print("Area: ", .1844)
+    percent=round(.1844*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.49 or zscore == -0.49:
+    print("Area: ", .1879)
+    percent=round(.1879*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.50 or zscore == -0.50:
+    print("Area: ", .1915)
+    percent=round(.1915*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.51 or zscore == -0.51:
+    print("Area: ", .1950)
+    percent=round(.1950*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.52 or zscore == -0.52:
+    print("Area: ", .1985)
+    percent=round(.1985*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.53 or zscore == -0.53:
+    print("Area: ", .2019)
+    percent=round(.2019*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.54 or zscore == -0.54:
+    print("Area: ", .2054)
+    percent=round(.2054*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.55 or zscore == -0.55:
+    print("Area: ", .2088)
+    percent=round(.2088*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.56 or zscore == -0.56:
+    print("Area: ", .2123)
+    percent=round(.2123*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.57 or zscore == -0.57:
+    print("Area: ", .2157)
+    percent=round(.2157*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.58 or zscore == -0.58:
+    print("Area: ", .2190)
+    percent=round(.2190*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.59 or zscore == -0.59:
+    print("Area: ", .2224)
+    percent=round(.2224*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.60 or zscore == -0.60:
+    print("Area: ", .2257)
+    percent=round(.2257*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.61 or zscore == -0.61:
+    print("Area: ", .2291)
+    percent=round(.2291*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.62 or zscore == -0.62:
+    print("Area: ", .2324)
+    percent=round(.2324*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.63 or zscore == -0.63:
+    print("Area: ", .2357)
+    percent=round(.2357*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.64 or zscore == -0.64:
+    print("Area: ", .2389)
+    percent=round(.2389*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.65 or zscore == -0.65:
+    print("Area: ", .2422)
+    percent=round(.2422*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.66 or zscore == -0.66:
+    print("Area: ", .2454)
+    percent=round(.2454*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.67 or zscore == -0.67:
+    print("Area: ", .2486)
+    percent=round(.2486*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.68 or zscore == -0.68:
+    print("Area: ", .2517)
+    percent=round(.2517*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.69 or zscore == -0.69:
+    print("Area: ", .2549)
+    percent=round(.2549*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.70 or zscore == -0.70:
+    print("Area: ", .2588)
+    percent=round(.2588*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.71 or zscore == -0.71:
+    print("Area: ", .2611)
+    percent=round(.2611*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.72 or zscore == -0.72:
+    print("Area: ", .2642)
+    percent=round(.2642*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.73 or zscore == -0.73:
+    print("Area: ", .2673)
+    percent=round(.2673*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.74 or zscore == -0.74:
+    print("Area: ", .2704)
+    percent=round(.2704*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.75 or zscore == -0.75:
+    print("Area: ", .2734)
+    percent=round(.2734*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.76 or zscore == -0.76:
+    print("Area: ", .2764)
+    percent=round(.2764*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.77 or zscore == -0.77:
+    print("Area: ", .2794)
+    percent=round(.2794*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.78 or zscore == -0.78:
+    print("Area: ", .2823)
+    percent=round(.2823*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.79 or zscore == -0.79:
+    print("Area: ", .2852)
+    percent=round(.2852*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.80 or zscore == -0.80:
+    print("Area: ", .2881)
+    percent=round(.2881*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.81 or zscore == -0.81:
+    print("Area: ", .2910)
+    percent=round(.2910*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.82 or zscore == -0.82:
+    print("Area: ", .2939)
+    percent=round(.2939*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.83 or zscore == -0.83:
+    print("Area: ", .2967)
+    percent=round(.2967*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.84 or zscore == -0.84:
+    print("Area: ", .2995)
+    percent=round(.2995*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.85 or zscore == -0.85:
+    print("Area: ", .3023)
+    percent=round(.3023*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.86 or zscore == -0.86:
+    print("Area: ", .3051)
+    percent=round(.3051*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.87 or zscore == -0.87:
+    print("Area: ", .3078)
+    percent=round(.3078*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.88 or zscore == -0.88:
+    print("Area: ", .3106)
+    percent=round(.3106*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.89 or zscore == -0.89:
+    print("Area: ", .3133)
+    percent=round(.3133*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.90 or zscore == -0.90:
+    print("Area: ", .3159)
+    percent=round(.3158*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.91 or zscore == -0.91:
+    print("Area: ", .3186)
+    percent=round(.3186*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.92 or zscore == -0.92:
+    print("Area: ", .3212)
+    percent=round(.3212*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.93 or zscore == -0.93:
+    print("Area: ", .3238)
+    percent=round(.3238*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.94 or zscore == -0.94:
+    print("Area: ", .3264)
+    percent=round(.3264*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.95 or zscore == -0.95:
+    print("Area: ", .3289)
+    percent=round(.3289*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.96 or zscore == -0.96:
+    print("Area: ", .3315)
+    percent=round(.3315*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.97 or zscore == -0.97:
+    print("Area: ", .3340)
+    percent=round(.3340*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.98 or zscore == -0.98:
+    print("Area: ", .3365)
+    percent=round(.3365*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 0.99 or zscore == -0.99:
+    print("Area: ", .3389)
+    percent=round(.3389*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.00 or zscore == -1.00:
+    print("Area: ", .3413)
+    percent=round(.3413*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.01 or zscore == -1.01:
+    print("Area: ", .3438)
+    percent=round(.3438*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.02 or zscore == -1.02:
+    print("Area: ", .3461)
+    percent=round(.3461*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.03 or zscore == -1.03:
+    print("Area: ", .3485)
+    percent=round(.3485*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.04 or zscore == -1.04:
+    print("Area: ", .3508)
+    percent=round(.3508*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.05 or zscore == -1.05:
+    print("Area: ", .3531)
+    percent=round(.3531*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.06 or zscore == -1.06:
+    print("Area: ", .3554)
+    percent=round(.3554*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.07 or zscore == -1.07:
+    print("Area: ", .3577)
+    percent=round(.3577*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.08 or zscore == -1.08:
+    print("Area: ", .3599)
+    percent=round(.3599*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.09 or zscore == -1.09:
+    print("Area: ", .3621)
+    percent=round(.3621*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.10 or zscore == -1.10:
+    print("Area: ", .3643)
+    percent=round(.3643*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.11 or zscore == -1.11:
+    print("Area: ", .3665)
+    percent=round(.3665*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.12 or zscore == -1.12:
+    print("Area: ", .3686)
+    percent=round(.3686*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.13 or zscore == -1.13:
+    print("Area: ", .3707)
+    percent=round(.3707*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.14 or zscore == -1.14:
+    print("Area: ", .3729)
+    percent=round(.3729*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.15 or zscore == -1.15:
+    print("Area: ", .3749)
+    percent=round(.3749*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.16 or zscore == -1.16:
+    print("Area: ", .3770)
+    percent=round(.3770*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.17 or zscore == -1.17:
+    print("Area: ", .3790)
+    percent=round(.3790*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.18 or zscore == -1.18:
+    print("Area: ", .3810)
+    percent=round(.3810*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.19 or zscore == -1.19:
+    print("Area: ", .3830)
+    percent=round(.3830*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.20 or zscore == -1.20:
+    print("Area: ", .3849)
+    percent=round(.3849*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.21 or zscore == -1.21:
+    print("Area: ", .3869)
+    percent=round(.3869*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.22 or zscore == -1.22:
+    print("Area: ", .3888)
+    percent=round(.3888*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.23 or zscore == -1.23:
+    print("Area: ", .3907)
+    percent=round(.3907*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.24 or zscore == -1.24:
+    print("Area: ", .3925)
+    percent=round(.3925*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.25 or zscore == -1.25:
+    print("Area: ", .3944)
+    percent=round(.3944*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.26 or zscore == -1.26:
+    print("Area: ", .3962)
+    percent=round(.3962*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.27 or zscore == -1.27:
+    print("Area: ", .3980)
+    percent=round(.3980*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.28 or zscore == -1.28:
+    print("Area: ", .3997)
+    percent=round(.3997*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.29 or zscore == -1.29:
+    print("Area: ", .4015)
+    percent=round(.4015*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.30 or zscore == -1.30:
+    print("Area: ", .4032)
+    percent=round(.4032*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.31 or zscore == -1.31:
+    print("Area: ", .4049)
+    percent=round(.4049*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.32 or zscore == -1.32:
+    print("Area: ", .4066)
+    percent=round(.4066*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.33 or zscore == -1.33:
+    print("Area: ", .4082)
+    percent=round(.4082*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.34 or zscore == -1.34:
+    print("Area: ", .4099)
+    percent=round(.4099*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.35 or zscore == -1.35:
+    print("Area: ", .4115)
+    percent=round(.4115*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.36 or zscore == -1.36:
+    print("Area: ", .4131)
+    percent=round(.4131*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.37 or zscore == -1.37:
+    print("Area: ", .4147)
+    percent=round(.4147*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.38 or zscore == -1.38:
+    print("Area: ", .4162)
+    percent=round(.4162*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.39 or zscore == -1.39:
+    print("Area: ", .4177)
+    percent=round(.4177*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.40 or zscore == -1.40:
+    print("Area: ", .4192)
+    percent=round(.4192*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.41 or zscore == -1.41:
+    print("Area: ", .4207)
+    percent=round(.4207*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.42 or zscore == -1.42:
+    print("Area: ", .4222)
+    percent=round(.4222*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.43 or zscore == -1.43:
+    print("Area: ", .4236)
+    percent=round(.4236*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.44 or zscore == -1.44:
+    print("Area: ", .4251)
+    percent=round(.4251*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.45 or zscore == -1.45:
+    print("Area: ", .4265)
+    percent=round(.4265*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.46 or zscore == -1.46:
+    print("Area: ", .4279)
+    percent=round(.4279*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.47 or zscore == -1.47:
+    print("Area: ", .4292)
+    percent=round(.4292*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.48 or zscore == -1.48:
+    print("Area: ", .4306)
+    percent=round(.4306*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.49 or zscore == -1.49:
+    print("Area: ", .4319)
+    percent=round(.4319*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.50 or zscore == -1.50:
+    print("Area: ", .4332)
+    percent=round(.4332*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.51 or zscore == -1.51:
+    print("Area: ", .4345)
+    percent=round(.4345*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.52 or zscore == -1.52:
+    print("Area: ", .4357)
+    percent=round(.4357*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.53 or zscore == -1.53:
+    print("Area: ", .4370)
+    percent=round(.4370*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.54 or zscore == -1.54:
+    print("Area: ", .4382)
+    percent=round(.4382*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.55 or zscore == -1.55:
+    print("Area: ", .4394)
+    percent=round(.4384*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.56 or zscore == -1.56:
+    print("Area: ", .4406)
+    percent=round(.4406*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.57 or zscore == -1.57:
+    print("Area: ", .4418)
+    percent=round(.4418*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.58 or zscore == -1.58:
+    print("Area: ", .4429)
+    percent=round(.4429*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.59 or zscore == -1.59:
+    print("Area: ", .4441)
+    percent=round(.4441*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.60 or zscore == -1.60:
+    print("Area: ", .4452)
+    percent=round(.4452*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.61 or zscore == -1.61:
+    print("Area: ", .4463)
+    percent=round(.4463*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.62 or zscore == -1.62:
+    print("Area: ", .4474)
+    percent=round(.4474*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.63 or zscore == -1.63:
+    print("Area: ", .4484)
+    percent=round(.4484*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.64 or zscore == -1.64:
+    print("Area: ", .4495)
+    percent=round(.4495*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.65 or zscore == -1.65:
+    print("Area: ", .4505)
+    percent=round(.4505*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.66 or zscore == -1.66:
+    print("Area: ", .4515)
+    percent=round(.4515*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.67 or zscore == -1.67:
+    print("Area: ", .4525)
+    percent=round(.4525*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.68 or zscore == -1.68:
+    print("Area: ", .4535)
+    percent=round(.4535*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.69 or zscore == -1.69:
+    print("Area: ", .4545)
+    percent=round(.4545*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.70 or zscore == -1.70:
+    print("Area: ", .4554)
+    percent=round(.4554*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.71 or zscore == -1.71:
+    print("Area: ", .4564)
+    percent=round(.4564*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.72 or zscore == -1.72:
+    print("Area: ", .4573)
+    percent=round(.4573*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.73 or zscore == -1.73:
+    print("Area: ", .4582)
+    percent=round(.4582*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.74 or zscore == -1.74:
+    print("Area: ", .4591)
+    percent=round(.4591*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.75 or zscore == -1.75:
+    print("Area: ", .4599)
+    percent=round(.4599*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.76 or zscore == -1.76:
+    print("Area: ", .4608)
+    percent=round(.4608*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.77 or zscore == -1.77:
+    print("Area: ", .4616)
+    percent=round(.4616*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.78 or zscore == -1.78:
+    print("Area: ", .4625)
+    percent=round(.4625*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.79 or zscore == -1.79:
+    print("Area: ", .4633)
+    percent=round(.4633*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.80 or zscore == -1.80:
+    print("Area: ", .4641)
+    percent=round(.4641*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.81 or zscore == -1.81:
+    print("Area: ", .4649)
+    percent=round(.4649*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.82 or zscore == -1.82:
+    print("Area: ", .4656)
+    percent=round(.4656*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.83 or zscore == -1.83:
+    print("Area: ", .4664)
+    percent=round(.4664*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.84 or zscore == -1.84:
+    print("Area: ", .4671)
+    percent=round(.4671*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.85 or zscore == -1.85:
+    print("Area: ", .4678)
+    percent=round(.4678*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.86 or zscore == -1.86:
+    print("Area: ", .4686)
+    percent=round(.4686*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.87 or zscore == -1.87:
+    print("Area: ", .4693)
+    percent=round(.4693*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.88 or zscore == -1.88:
+    print("Area: ", .4699)
+    percent=round(.4699*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.89 or zscore == -1.89:
+    print("Area: ", .4706)
+    percent=round(.4706*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.90 or zscore == -1.90:
+    print("Area: ", .4713)
+    percent=round(.4713*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.91 or zscore == -1.91:
+    print("Area: ", .4719)
+    percent=round(.4719*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.92 or zscore == -1.92:
+    print("Area: ", .4726)
+    percent=round(.4726*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.93 or zscore == -1.93:
+    print("Area: ", .4732)
+    percent=round(.4732*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.94 or zscore == -1.94:
+    print("Area: ", .4738)
+    percent=round(.4738*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.95 or zscore == -1.95:
+    print("Area: ", .4744)
+    percent=round(.4744*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.96 or zscore == -1.96:
+    print("Area: ", .4750)
+    percent=round(.4750*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.97 or zscore == -1.97:
+    print("Area: ", .4756)
+    percent=round(.4756*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.98 or zscore == -1.98:
+    print("Area: ", .4761)
+    percent=round(.4761*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 1.99 or zscore == -1.99:
+    print("Area: ", .4767)
+    percent=round(.4767*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.00 or zscore == -2.00:
+    print("Area: ", .4772)
+    percent=round(.4772*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.01 or zscore == -2.01:
+    print("Area: ", .4778)
+    percent=round(.4778*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.02 or zscore == -2.02:
+    print("Area: ", .4783)
+    percent=round(.4783*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.03 or zscore == -2.03:
+    print("Area: ", .4788)
+    percent=round(.4788*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.04 or zscore == -2.04:
+    print("Area: ", .4793)
+    percent=round(.4793*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.05 or zscore == -2.05:
+    print("Area: ", .4798)
+    percent=round(.4798*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.06 or zscore == -2.06:
+    print("Area: ", .4803)
+    percent=round(.4803*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.07 or zscore == -2.07:
+    print("Area: ", .4808)
+    percent=round(.4808*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.08 or zscore == -2.08:
+    print("Area: ", .4812)
+    percent=round(.4812*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.09 or zscore == -2.09:
+    print("Area: ", .4817)
+    percent=round(.4817*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.10 or zscore == -2.10:
+    print("Area: ", .4821)
+    percent=round(.4821*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.11 or zscore == -2.11:
+    print("Area: ", .4826)
+    percent=round(.4826*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.12 or zscore == -2.12:
+    print("Area: ", .4830)
+    percent=round(.4830*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.13 or zscore == -2.13:
+    print("Area: ", .4834)
+    percent=round(.4834*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.14 or zscore == -2.14:
+    print("Area: ", .4838)
+    percent=round(.4838*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.15 or zscore == -2.15:
+    print("Area: ", .4842)
+    percent=round(.4842*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.16 or zscore == -2.16:
+    print("Area: ", .4846)
+    percent=round(.4846*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.17 or zscore == -2.17:
+    print("Area: ", .4850)
+    percent=round(.4850*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.18 or zscore == -2.18:
+    print("Area: ", .4854)
+    percent=round(.4854*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.19 or zscore == -2.19:
+    print("Area: ", .4857)
+    percent=round(.4857*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.20 or zscore == -2.20:
+    print("Area: ", .4861)
+    percent=round(.4861*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.21 or zscore == -2.21:
+    print("Area: ", .4864)
+    percent=round(.4864*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.22 or zscore == -2.22:
+    print("Area: ", .4868)
+    percent=round(.4861*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.23 or zscore == -2.23:
+    print("Area: ", .4871)
+    percent=round(.4871*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.24 or zscore == -2.24:
+    print("Area: ", .4875)
+    percent=round(.4875*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.25 or zscore == -2.25:
+    print("Area: ", .4878)
+    percent=round(.4878*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.26 or zscore == -2.26:
+    print("Area: ", .4881)
+    percent=round(.4881*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.27 or zscore == -2.27:
+    print("Area: ", .4884)
+    percent=round(.4884*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.28 or zscore == -2.28:
+    print("Area: ", .4887)
+    percent=round(.4887*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.29 or zscore == -2.29:
+    print("Area: ", .4890)
+    percent=round(.4890*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.30 or zscore == -2.30:
+    print("Area: ", .4893)
+    percent=round(.4893*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.31 or zscore == -2.31:
+    print("Area: ", .4896)
+    percent=round(.4896*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.32 or zscore == -2.32:
+    print("Area: ", .4898)
+    percent=round(.4898*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.33 or zscore == -2.33:
+    print("Area: ", .4901)
+    percent=round(.4901*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.34 or zscore == -2.34:
+    print("Area: ", .4904)
+    percent=round(.4904*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.35 or zscore == -2.35:
+    print("Area: ", .4906)
+    percent=round(.4906*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.36 or zscore == -2.36:
+    print("Area: ", .4909)
+    percent=round(.4909*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.37 or zscore == -2.37:
+    print("Area: ", .4911)
+    percent=round(.4911*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.38 or zscore == -2.38:
+    print("Area: ", .4913)
+    percent=round(.4913*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.39 or zscore == -2.39:
+    print("Area: ", .4916)
+    percent=round(.4916*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.40 or zscore == -2.40:
+    print("Area: ", .4918)
+    percent=round(.4918*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.41 or zscore == -2.41:
+    print("Area: ", .4920)
+    percent=round(.4920*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.42 or zscore == -2.42:
+    print("Area: ", .4922)
+    percent=round(.4922*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.43 or zscore == -2.43:
+    print("Area: ", .4925)
+    percent=round(.4925*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.44 or zscore == -2.44:
+    print("Area: ", .4927)
+    percent=round(.4927*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.45 or zscore == -2.45:
+    print("Area: ", .4929)
+    percent=round(.4929*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.46 or zscore == -2.46:
+    print("Area: ", .4931)
+    percent=round(.4931*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.47 or zscore == -2.47:
+    print("Area: ", .4932)
+    percent=round(.4932*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.48 or zscore == -2.48:
+    print("Area: ", .4934)
+    percent=round(.4934*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.49 or zscore == -2.49:
+    print("Area: ", .4936)
+    percent=round(.4936*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.50 or zscore == -2.50:
+    print("Area: ", .4938)
+    percent=round(.4838*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.51 or zscore == -2.51:
+    print("Area: ", .4940)
+    percent=round(.4940*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.52 or zscore == -2.52:
+    print("Area: ", .4941)
+    percent=round(.4941*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.53 or zscore == -2.53:
+    print("Area: ", .4943)
+    percent=round(.4943*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.54 or zscore == -2.54:
+    print("Area: ", .4945)
+    percent=round(.4945*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.55 or zscore == -2.55:
+    print("Area: ", .4946)
+    percent=round(.4946*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.56 or zscore == -2.56:
+    print("Area: ", .4948)
+    percent=round(.4948*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.57 or zscore == -2.57:
+    print("Area: ", .4949)
+    percent=round(.4949*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.58 or zscore == -2.58:
+    print("Area: ", .4951)
+    percent=round(.4951*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.59 or zscore == -2.59:
+    print("Area: ", .4952)
+    percent=round(.4952*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.60 or zscore == -2.60:
+    print("Area: ", .4953)
+    percent=round(.4953*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.61 or zscore == -2.61:
+    print("Area: ", .4955)
+    percent=round(.4955*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.62 or zscore == -2.62:
+    print("Area: ", .4956)
+    percent=round(.4956*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.63 or zscore == -2.63:
+    print("Area: ", .4957)
+    percent=round(.4957*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.64 or zscore == -2.64:
+    print("Area: ", .4959)
+    percent=round(.4959*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.65 or  zscore == -2.65:
+    print("Area: ", .4960)
+    percent=round(.4960*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.66 or zscore == -2.66:
+    print("Area: ", .4961)
+    percent=round(.4961*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.67 or zscore == -2.67:
+    print("Area: ", .4962)
+    percent=round(.4962*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.68 or zscore == 2.68:
+    print("Area: ", .4963)
+    percent=round(.4963*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.69 or zscore == -2.69:
+    print("Area: ", .4964)
+    percent=round(.4964*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.70 or zscore == -2.70:
+    print("Area: ", .4965)
+    percent=round(.4965*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.71 or zscore == -2.71:
+    print("Area: ", .4966)
+    percent=round(.4966*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.72 or zscore == -2.72:
+    print("Area: ", .4967)
+    percent=round(.4967*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.73 or zscore == -2.73:
+    print("Area: ", .4968)
+    percent=round(.4968*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.74 or zscore == -2.74:
+    print("Area: ", .4969)
+    percent=round(.4969*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.75 or zscore == -2.75:
+    print("Area: ", .4970)
+    percent=round(.4970*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.76 or zscore == -2.76:
+    print("Area: ", .4971)
+    percent=round(.4971*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.77 or zscore == -2.77:
+    print("Area: ", .4972)
+    percent=round(.4972*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.78 or zscore == -2.78:
+    print("Area: ", .4973)
+    percent=round(.4973*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.79 or zscore == -2.79:
+    print("Area: ", .4974)
+    percent=round(.4974*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.80 or zscore == -2.80:
+    print("Area: ", .4974)
+    percent=round(.4974*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.81 or zscore == -2.81:
+    print("Area: ", .4975)
+    percent=round(.4975*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.82 or zscore == -2.82:
+    print("Area: ", .4976)
+    percent=round(.4976*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.83 or zscore == -2.83:
+    print("Area: ", .4977)
+    percent=round(.4977*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.84 or zscore == -2.84:
+    print("Area: ", .4977)
+    percent=round(.4977*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.85 or zscore == -2.85:
+    print("Area: ", .4978)
+    percent=round(.4978*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.86 or zscore == -2.86:
+    print("Area: ", .4979)
+    percent=round(.4979*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.87 or zscore == -2.87:
+    print("Area: ", .4979)
+    percent=round(.4979*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.88 or zscore == -2.88:
+    print("Area: ", .4980)
+    percent=round(.4980*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.89 or zscore == -2.89:
+    print("Area: ", .4981)
+    percent=round(.4981*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.90 or zscore == -2.90:
+    print("Area: ", .4981)
+    percent=round(.4981*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.91 or zscore == -2.91:
+    print("Area: ", .4982)
+    percent=round(.4982*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.92 or zscore == -2.92:
+    print("Area: ", .4982)
+    percent=round(.4982*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.93 or zscore == -2.93:
+    print("Area: ", .4983)
+    percent=round(.4983*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.94 or zscore == -2.94:
+    print("Area: ", .4984)
+    percent=round(.4984*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.95 or zscore == -2.95:
+    print("Area: ", .4984)
+    percent=round(.4984*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.96 or zscore == -2.96:
+    print("Area: ", .4985)
+    percent=round(.4985*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.97 or zscore == -2.97:
+    print("Area: ", .4985)
+    percent=round(.4985*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.98 or zscore == -2.98:
+    print("Area: ", .4986)
+    percent=round(.4986*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 2.99 or zscore == -2.99:
+    print("Area: ", .4986)
+    percent=round(.4986*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 3.00 or zscore == -3.00:
+    print("Area: ", .4987)
+    percent=round(.4987*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 3.01 or zscore == -3.01:
+    print("Area: ", .4987)
+    percent=round(.4987*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 3.02 or zscore == -3.02:
+    print("Area: ", .4987)
+    percent=round(.4987*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 3.03 or zscore == -3.03:
+    print("Area: ", .4988)
+    percent=round(.4988*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 3.04 or zscore == -3.04:
+    print("Area: ", .4988)
+    percent=round(.4988*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 3.05 or zscore == -3.05:
+    print("Area: ", .4989)
+    percent=round(.4989*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 3.06 or zscore == -3.06:
+    print("Area: ", .4989)
+    percent=round(.4989*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore == 3.07 or zscore == -3.07:
+    print("Area: ", .4989)
+    percent=round(.4989*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore >= 3.08 and zscore <= 3.10 or zscore <= -3.08 and zscore >= -3.10:
+    print("Area: ", .4990)
+    percent=round(.4990*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore >= 3.11 and zscore <= 3.13 or zscore <= -3.11 and zscore >= -3.13:
+    print("Area: ", .4991)
+    percent=round(.4991*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore >= 3.14 and zscore <= 3.17 or zscore <= -3.14 and zscore >= -3.17:
+    print("Area: ", .4992)
+    percent=round(.4992*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore >= 3.18 and zscore <= 3.21 or zscore <= -3.18 and zscore >= -3.21:
+    print("Area: ", .4993)
+    percent=round(.4993*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore >= 3.22 and zscore <= 3.26 or zscore <= -3.22 and zscore >= -3.26:
+    print("Area: ", .4994)
+    percent=round(.4994*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore >= 3.27 and zscore <= 3.32 or zscore <= -3.27 and zscore >= -3.32:
+    print("Area: ", .4995)
+    percent=round(.4995*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore >= 3.33 and zscore <= 3.38 or zscore <= -3.33 and zscore >= -3.38:
+    print("Area: ", .4996)
+    percent=round(.4996*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore >= 3.39 and zscore <= 3.48 or zscore <= -3.39 and zscore >= -3.48:
+    print("Area: ", .4997)
+    percent=round(.4997*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore >= 3.49 and zscore <= 3.62 or zscore <= -3.49 and zscore >= -3.62:
+    print("Area: ", .4998)
+    percent=round(.4998*100, 2)
+    print("Percentage:" ,percent,"%")
+
+elif zscore >= 3.63 or zscore <= -3.63:
+    print("Area: ", .4999)
+    percent=round(.4999*100, 2)
+    print("Percentage:" ,percent,"%")
+    
+print("\nThrough the formula for computing the z-score given by z = (x-μ)/σ, in which the value of x is the raw score, μ represent the population mean, and σ as the population standard deviation, computing z-score is as it follows: ")
+print("\n1. Complete the values for raw score (x), population mean (μ), and population standard deviation (σ).")
+print("\nz = (x-μ)/σ", "\n\nx =", rawscore, "\nμ =", mean, "\nσ =", sd, "\n\nz =", "(", rawscore, "-", mean, ")", "/", sd)
+print("\n2. Solve for the equation inside the parenthesis. Simply, subtract the raw score (x) and the population mean (μ).")
+print("\nz = (x-μ)")
+print("  =", "(", rawscore, "-", mean, ")")
+print("  =", (rawscore-mean))
+print("\n3. After getting the difference of raw score (x) to the population mean (μ), divide the value to the standard deviation (σ). If the answer is in decimal form, round off to the nearest hundredths for the final answer.")
+print("\nz =", (rawscore-mean), "/", sd)
+print("  =", zscore_1)
+print("\nTherefore, z-score is equal to ", zscore, ".", sep="")
+print("\n4. Use the z-table to find the area of the given z-score.")
+
+print("\n\n\n\n\t\t\t\t\t\t\t\t\t\tZ-SCORE TO RAW SCORE: ")
+print("Formula: ")
+print("x = µ + Zσ")
+print("\nSolution: ")
+print(mean, "+", "(", zscore_1, ")", "(", sd, ")", "=", rawscore_2)
+print("\nRaw score: ", rawscore_2)
+
+print("\nAs for the formula for computing the raw score given by x = µ + Zσ, which the value of Z is the z-score value, μ as the population mean and σ for population standard deviation, computing the raw score is as it follows:")
+print("\n1. Complete the values for z-score (Z), population mean (μ), and population standard deviation (σ).")
+print("\nx = µ + Zσ", "\n\nμ =", mean, "\nZ =", zscore_1, "\nσ =", sd, "\n\nx =", mean, "+", "(", zscore_1, ")", "(", sd, ")")
+print("\n2. Solve for the two values in the parenthesis. Simply, multiply the z-score (Z) and the population standard deviation (σ).")
+print("\nx = Zσ")
+print("  =", "(", zscore_1, ")", "(", sd, ")")
+print("  =", (zscore_1*sd))
+print("\n3. After getting the product of z-score (Z) and the population standard deviation (σ), add the value to the population mean (μ). If the answer is in decimal form, round off to the nearest hundredths for the final answer.")
+print("\nx =", mean, "+", (zscore_1*sd))
+print("  =", rawscore_2)
+print("\nTherefore, raw score is equal to ", rawscore_2, ".", sep="")
+import random
+jokes=["A statistician can have his head in an oven and his feet in ice, and he will say that on the average he feels fine.", "You're not an outlier; you just haven’t found your distribution yet!", "What did the z distribution say to the t distribution? You may look like me but you're not normal.", "Statistics show that those who celebrate more birthdays live longer.", "Statistics is the art of never having to say you're wrong.", "You can't prove everything with statistics, but you can always find something good (or bad) to say.", "You can't prove everything with statistics, but you can always find something good (or bad) to say.", "Numbers are like people; torture them enough and they'll tell you anything."]
+quotes=random.choice(jokes)
+print("\n\n\tToday's quote:",quotes)
+
+while True:
+    if input('\n\nDo You Want To Continue?(enter "y" to continue, "n" if no): ') != 'y':
+            print("Goodbye!")
+            break
+        
+    rawscore=eval(input("\n­Enter Raw Score: "))
+    mean=eval(input("Ente­r Mean: "))
+    sd=eval(input("Enter Standard Deviation: "))
+
+    zscore_1=(rawscore-mean)/sd
+    zscore=round(zscore_1, 2)
+
+    rawscore_1=mean+(zscore_1*sd)
+    rawscore_2=round(rawscore_1, 2)
+
+
+    print("\n\n\n\t\t\t\t\t\t\t\t\t\tRAW SCORE TO Z-SCORE: ")
+    print("Formula: ")
+    print("z = (x-μ)/σ")
+    print("\nSolution: ")
+    print(rawscore, "-", mean, "/", sd, "=", zscore)
+    print("\nz-score: ", zscore)
+
+    if zscore == 0.00:
+        print("Area: ", .0000)
+        percent=round(.0000*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.01 or zscore == -0.01:
+        print("Area: ", .0040)
+        percent=round(.0040*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.02 or zscore == -0.02:
+        print("Area: ", .0080)
+        percent=round(.0080*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.03 or zscore == -0.03:
+        print("Area: ", .0120)
+        percent=round(.0120*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.04 or zscore == -0.04:
+        print("Area: ", .0160)
+        percent=round(.0160*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.05 or zscore == -0.05:
+        print("Area: ", .0199)
+        percent=round(.0199*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.06 or zscore == -0.06:
+        print("Area: ", .0239)
+        percent=round(.0239*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.07 or zscore == -0.07:
+        print("Area: ", .0279)
+        percent=round(.0279*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.08 or zscore == -0.08:
+        print("Area: ", .0319)
+        percent=round(.0319*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.09 or zscore == -0.09:
+        print("Area: ", .0359)
+        percent=round(.0359*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.10 or zscore == -0.10:
+        print("Area: ", .0398)
+        percent=round(.0398*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.11 or zscore == -0.11:
+        print("Area: ", .0438)
+        percent=round(.0438*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.12 or zscore == -0.12:
+        print("Area: ", .0478)
+        percent=round(.0478*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.13 or zscore == -0.13:
+        print("Area: ", .0517)
+        percent=round(.0517*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.14 or zscore == -0.14:
+        print("Area: ", .0557)
+        percent=round(.0557*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.15 or zscore == -0.15:
+        print("Area: ", .0596)
+        percent=round(.0596*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.16 or zscore == -0.16:
+        print("Area: ", .0636)
+        percent=round(.0636*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.17 or zscore == -0.17:
+        print("Area: ", .0675)
+        percent=round(.0675*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.18 or zscore == -0.18:
+        print("Area: ", .0714)
+        percent=round(.0714*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.19 or zscore == -0.19:
+        print("Area: ", .0753)
+        percent=round(.0753*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.20 or zscore == -0.20:
+        print("Area: ", .0793)
+        percent=round(.0793*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.21 or zscore == -0.21:
+        print("Area: ", .0832)
+        percent=round(.0832*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.22 or zscore == -0.22:
+        print("Area: ", .0871)
+        percent=round(.0871*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.23 or zscore == -0.23:
+        print("Area: ", .0910)
+        percent=round(.0910*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.24 or zscore == -0.24:
+        print("Area: ", .0948)
+        percent=round(.0948*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.25 or zscore == -0.25:
+        print("Area: ", .0987)
+        percent=round(.0987*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.26 or zscore == -0.26:
+        print("Area: ", .1026)
+        percent=round(.1026*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.27 or zscore == -0.27:
+        print("Area: ", .1064)
+        percent=round(.1064*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.28 or zscore == -0.28:
+        print("Area: ", .1103)
+        percent=round(.1103*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.29 or zscore == -0.29:
+        print("Area: ", .1141)
+        percent=round(.1141*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.30 or zscore == -0.30:
+        print("Area: ", .1179)
+        percent=round(.1179*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.31 or zscore == -0.31:
+        print("Area: ", .1217)
+        percent=round(.1217*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.32 or zscore == -0.32:
+        print("Area: ", .1255)
+        percent=round(.1255*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.33 or zscore == -0.33:
+        print("Area: ", .1293)
+        percent=round(.1293*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.34 or zscore == -0.34:
+        print("Area: ", .1331)
+        percent=round(.1331*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.35 or zscore == -0.35:
+        print("Area: ", .1368)
+        percent=round(.1368*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.36 or zscore == -0.36:
+        print("Area: ", .1406)
+        percent=round(.1406*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.37 or zscore == -0.37:
+        print("Area: ", .1443)
+        percent=round(.1443*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.38 or zscore == -0.38:
+        print("Area: ", .1480)
+        percent=round(.1480*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.39 or zscore == -0.39:
+        print("Area: ", .1517)
+        percent=round(.1517*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.40 or zscore == -0.40:
+        print("Area: ", .1554)
+        percent=round(.1554*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.41 or zscore == -0.41:
+        print("Area: ", .1591)
+        percent=round(.1591*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.42 or zscore == -0.42:
+        print("Area: ", .1628)
+        percent=round(.1628*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.43 or zscore == -0.43:
+        print("Area: ", .1664)
+        percent=round(.1664*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.44 or zscore == -0.44:
+        print("Area: ", .1700)
+        percent=round(.1700*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.45 or zscore == -0.45:
+        print("Area: ", .1736)
+        percent=round(.1736*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.46 or zscore == -0.46:
+        print("Area: ", .1772)
+        percent=round(.1772*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.47 or zscore == -0.47:
+        print("Area: ", .1808)
+        percent=round(.1808*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.48 or zscore == -0.48:
+        print("Area: ", .1844)
+        percent=round(.1844*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.49 or zscore == -0.49:
+        print("Area: ", .1879)
+        percent=round(.1879*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.50 or zscore == -0.50:
+        print("Area: ", .1915)
+        percent=round(.1915*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.51 or zscore == -0.51:
+        print("Area: ", .1950)
+        percent=round(.1950*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.52 or zscore == -0.52:
+        print("Area: ", .1985)
+        percent=round(.1985*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.53 or zscore == -0.53:
+        print("Area: ", .2019)
+        percent=round(.2019*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.54 or zscore == -0.54:
+        print("Area: ", .2054)
+        percent=round(.2054*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.55 or zscore == -0.55:
+        print("Area: ", .2088)
+        percent=round(.2088*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.56 or zscore == -0.56:
+        print("Area: ", .2123)
+        percent=round(.2123*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.57 or zscore == -0.57:
+        print("Area: ", .2157)
+        percent=round(.2157*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.58 or zscore == -0.58:
+        print("Area: ", .2190)
+        percent=round(.2190*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.59 or zscore == -0.59:
+        print("Area: ", .2224)
+        percent=round(.2224*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.60 or zscore == -0.60:
+        print("Area: ", .2257)
+        percent=round(.2257*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.61 or zscore == -0.61:
+        print("Area: ", .2291)
+        percent=round(.2291*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.62 or zscore == -0.62:
+        print("Area: ", .2324)
+        percent=round(.2324*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.63 or zscore == -0.63:
+        print("Area: ", .2357)
+        percent=round(.2357*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.64 or zscore == -0.64:
+        print("Area: ", .2389)
+        percent=round(.2389*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.65 or zscore == -0.65:
+        print("Area: ", .2422)
+        percent=round(.2422*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.66 or zscore == -0.66:
+        print("Area: ", .2454)
+        percent=round(.2454*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.67 or zscore == -0.67:
+        print("Area: ", .2486)
+        percent=round(.2486*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.68 or zscore == -0.68:
+        print("Area: ", .2517)
+        percent=round(.2517*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.69 or zscore == -0.69:
+        print("Area: ", .2549)
+        percent=round(.2549*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.70 or zscore == -0.70:
+        print("Area: ", .2588)
+        percent=round(.2588*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.71 or zscore == -0.71:
+        print("Area: ", .2611)
+        percent=round(.2611*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.72 or zscore == -0.72:
+        print("Area: ", .2642)
+        percent=round(.2642*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.73 or zscore == -0.73:
+        print("Area: ", .2673)
+        percent=round(.2673*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.74 or zscore == -0.74:
+        print("Area: ", .2704)
+        percent=round(.2704*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.75 or zscore == -0.75:
+        print("Area: ", .2734)
+        percent=round(.2734*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.76 or zscore == -0.76:
+        print("Area: ", .2764)
+        percent=round(.2764*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.77 or zscore == -0.77:
+        print("Area: ", .2794)
+        percent=round(.2794*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.78 or zscore == -0.78:
+        print("Area: ", .2823)
+        percent=round(.2823*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.79 or zscore == -0.79:
+        print("Area: ", .2852)
+        percent=round(.2852*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.80 or zscore == -0.80:
+        print("Area: ", .2881)
+        percent=round(.2881*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.81 or zscore == -0.81:
+        print("Area: ", .2910)
+        percent=round(.2910*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.82 or zscore == -0.82:
+        print("Area: ", .2939)
+        percent=round(.2939*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.83 or zscore == -0.83:
+        print("Area: ", .2967)
+        percent=round(.2967*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.84 or zscore == -0.84:
+        print("Area: ", .2995)
+        percent=round(.2995*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.85 or zscore == -0.85:
+        print("Area: ", .3023)
+        percent=round(.3023*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.86 or zscore == -0.86:
+        print("Area: ", .3051)
+        percent=round(.3051*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.87 or zscore == -0.87:
+        print("Area: ", .3078)
+        percent=round(.3078*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.88 or zscore == -0.88:
+        print("Area: ", .3106)
+        percent=round(.3106*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.89 or zscore == -0.89:
+        print("Area: ", .3133)
+        percent=round(.3133*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.90 or zscore == -0.90:
+        print("Area: ", .3159)
+        percent=round(.3158*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.91 or zscore == -0.91:
+        print("Area: ", .3186)
+        percent=round(.3186*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.92 or zscore == -0.92:
+        print("Area: ", .3212)
+        percent=round(.3212*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.93 or zscore == -0.93:
+        print("Area: ", .3238)
+        percent=round(.3238*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.94 or zscore == -0.94:
+        print("Area: ", .3264)
+        percent=round(.3264*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.95 or zscore == -0.95:
+        print("Area: ", .3289)
+        percent=round(.3289*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.96 or zscore == -0.96:
+        print("Area: ", .3315)
+        percent=round(.3315*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.97 or zscore == -0.97:
+        print("Area: ", .3340)
+        percent=round(.3340*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.98 or zscore == -0.98:
+        print("Area: ", .3365)
+        percent=round(.3365*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 0.99 or zscore == -0.99:
+        print("Area: ", .3389)
+        percent=round(.3389*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.00 or zscore == -1.00:
+        print("Area: ", .3413)
+        percent=round(.3413*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.01 or zscore == -1.01:
+        print("Area: ", .3438)
+        percent=round(.3438*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.02 or zscore == -1.02:
+        print("Area: ", .3461)
+        percent=round(.3461*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.03 or zscore == -1.03:
+        print("Area: ", .3485)
+        percent=round(.3485*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.04 or zscore == -1.04:
+        print("Area: ", .3508)
+        percent=round(.3508*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.05 or zscore == -1.05:
+        print("Area: ", .3531)
+        percent=round(.3531*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.06 or zscore == -1.06:
+        print("Area: ", .3554)
+        percent=round(.3554*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.07 or zscore == -1.07:
+        print("Area: ", .3577)
+        percent=round(.3577*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.08 or zscore == -1.08:
+        print("Area: ", .3599)
+        percent=round(.3599*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.09 or zscore == -1.09:
+        print("Area: ", .3621)
+        percent=round(.3621*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.10 or zscore == -1.10:
+        print("Area: ", .3643)
+        percent=round(.3643*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.11 or zscore == -1.11:
+        print("Area: ", .3665)
+        percent=round(.3665*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.12 or zscore == -1.12:
+        print("Area: ", .3686)
+        percent=round(.3686*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.13 or zscore == -1.13:
+        print("Area: ", .3707)
+        percent=round(.3707*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.14 or zscore == -1.14:
+        print("Area: ", .3729)
+        percent=round(.3729*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.15 or zscore == -1.15:
+        print("Area: ", .3749)
+        percent=round(.3749*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.16 or zscore == -1.16:
+        print("Area: ", .3770)
+        percent=round(.3770*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.17 or zscore == -1.17:
+        print("Area: ", .3790)
+        percent=round(.3790*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.18 or zscore == -1.18:
+        print("Area: ", .3810)
+        percent=round(.3810*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.19 or zscore == -1.19:
+        print("Area: ", .3830)
+        percent=round(.3830*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.20 or zscore == -1.20:
+        print("Area: ", .3849)
+        percent=round(.3849*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.21 or zscore == -1.21:
+        print("Area: ", .3869)
+        percent=round(.3869*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.22 or zscore == -1.22:
+        print("Area: ", .3888)
+        percent=round(.3888*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.23 or zscore == -1.23:
+        print("Area: ", .3907)
+        percent=round(.3907*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.24 or zscore == -1.24:
+        print("Area: ", .3925)
+        percent=round(.3925*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.25 or zscore == -1.25:
+        print("Area: ", .3944)
+        percent=round(.3944*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.26 or zscore == -1.26:
+        print("Area: ", .3962)
+        percent=round(.3962*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.27 or zscore == -1.27:
+        print("Area: ", .3980)
+        percent=round(.3980*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.28 or zscore == -1.28:
+        print("Area: ", .3997)
+        percent=round(.3997*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.29 or zscore == -1.29:
+        print("Area: ", .4015)
+        percent=round(.4015*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.30 or zscore == -1.30:
+        print("Area: ", .4032)
+        percent=round(.4032*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.31 or zscore == -1.31:
+        print("Area: ", .4049)
+        percent=round(.4049*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.32 or zscore == -1.32:
+        print("Area: ", .4066)
+        percent=round(.4066*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.33 or zscore == -1.33:
+        print("Area: ", .4082)
+        percent=round(.4082*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.34 or zscore == -1.34:
+        print("Area: ", .4099)
+        percent=round(.4099*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.35 or zscore == -1.35:
+        print("Area: ", .4115)
+        percent=round(.4115*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.36 or zscore == -1.36:
+        print("Area: ", .4131)
+        percent=round(.4131*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.37 or zscore == -1.37:
+        print("Area: ", .4147)
+        percent=round(.4147*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.38 or zscore == -1.38:
+        print("Area: ", .4162)
+        percent=round(.4162*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.39 or zscore == -1.39:
+        print("Area: ", .4177)
+        percent=round(.4177*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.40 or zscore == -1.40:
+        print("Area: ", .4192)
+        percent=round(.4192*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.41 or zscore == -1.41:
+        print("Area: ", .4207)
+        percent=round(.4207*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.42 or zscore == -1.42:
+        print("Area: ", .4222)
+        percent=round(.4222*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.43 or zscore == -1.43:
+        print("Area: ", .4236)
+        percent=round(.4236*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.44 or zscore == -1.44:
+        print("Area: ", .4251)
+        percent=round(.4251*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.45 or zscore == -1.45:
+        print("Area: ", .4265)
+        percent=round(.4265*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.46 or zscore == -1.46:
+        print("Area: ", .4279)
+        percent=round(.4279*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.47 or zscore == -1.47:
+        print("Area: ", .4292)
+        percent=round(.4292*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.48 or zscore == -1.48:
+        print("Area: ", .4306)
+        percent=round(.4306*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.49 or zscore == -1.49:
+        print("Area: ", .4319)
+        percent=round(.4319*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.50 or zscore == -1.50:
+        print("Area: ", .4332)
+        percent=round(.4332*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.51 or zscore == -1.51:
+        print("Area: ", .4345)
+        percent=round(.4345*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.52 or zscore == -1.52:
+        print("Area: ", .4357)
+        percent=round(.4357*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.53 or zscore == -1.53:
+        print("Area: ", .4370)
+        percent=round(.4370*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.54 or zscore == -1.54:
+        print("Area: ", .4382)
+        percent=round(.4382*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.55 or zscore == -1.55:
+        print("Area: ", .4394)
+        percent=round(.4384*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.56 or zscore == -1.56:
+        print("Area: ", .4406)
+        percent=round(.4406*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.57 or zscore == -1.57:
+        print("Area: ", .4418)
+        percent=round(.4418*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.58 or zscore == -1.58:
+        print("Area: ", .4429)
+        percent=round(.4429*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.59 or zscore == -1.59:
+        print("Area: ", .4441)
+        percent=round(.4441*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.60 or zscore == -1.60:
+        print("Area: ", .4452)
+        percent=round(.4452*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.61 or zscore == -1.61:
+        print("Area: ", .4463)
+        percent=round(.4463*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.62 or zscore == -1.62:
+        print("Area: ", .4474)
+        percent=round(.4474*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.63 or zscore == -1.63:
+        print("Area: ", .4484)
+        percent=round(.4484*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.64 or zscore == -1.64:
+        print("Area: ", .4495)
+        percent=round(.4495*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.65 or zscore == -1.65:
+        print("Area: ", .4505)
+        percent=round(.4505*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.66 or zscore == -1.66:
+        print("Area: ", .4515)
+        percent=round(.4515*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.67 or zscore == -1.67:
+        print("Area: ", .4525)
+        percent=round(.4525*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.68 or zscore == -1.68:
+        print("Area: ", .4535)
+        percent=round(.4535*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.69 or zscore == -1.69:
+        print("Area: ", .4545)
+        percent=round(.4545*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.70 or zscore == -1.70:
+        print("Area: ", .4554)
+        percent=round(.4554*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.71 or zscore == -1.71:
+        print("Area: ", .4564)
+        percent=round(.4564*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.72 or zscore == -1.72:
+        print("Area: ", .4573)
+        percent=round(.4573*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.73 or zscore == -1.73:
+        print("Area: ", .4582)
+        percent=round(.4582*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.74 or zscore == -1.74:
+        print("Area: ", .4591)
+        percent=round(.4591*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.75 or zscore == -1.75:
+        print("Area: ", .4599)
+        percent=round(.4599*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.76 or zscore == -1.76:
+        print("Area: ", .4608)
+        percent=round(.4608*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.77 or zscore == -1.77:
+        print("Area: ", .4616)
+        percent=round(.4616*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.78 or zscore == -1.78:
+        print("Area: ", .4625)
+        percent=round(.4625*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.79 or zscore == -1.79:
+        print("Area: ", .4633)
+        percent=round(.4633*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.80 or zscore == -1.80:
+        print("Area: ", .4641)
+        percent=round(.4641*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.81 or zscore == -1.81:
+        print("Area: ", .4649)
+        percent=round(.4649*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.82 or zscore == -1.82:
+        print("Area: ", .4656)
+        percent=round(.4656*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.83 or zscore == -1.83:
+        print("Area: ", .4664)
+        percent=round(.4664*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.84 or zscore == -1.84:
+        print("Area: ", .4671)
+        percent=round(.4671*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.85 or zscore == -1.85:
+        print("Area: ", .4678)
+        percent=round(.4678*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.86 or zscore == -1.86:
+        print("Area: ", .4686)
+        percent=round(.4686*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.87 or zscore == -1.87:
+        print("Area: ", .4693)
+        percent=round(.4693*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.88 or zscore == -1.88:
+        print("Area: ", .4699)
+        percent=round(.4699*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.89 or zscore == -1.89:
+        print("Area: ", .4706)
+        percent=round(.4706*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.90 or zscore == -1.90:
+        print("Area: ", .4713)
+        percent=round(.4713*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.91 or zscore == -1.91:
+        print("Area: ", .4719)
+        percent=round(.4719*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.92 or zscore == -1.92:
+        print("Area: ", .4726)
+        percent=round(.4726*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.93 or zscore == -1.93:
+        print("Area: ", .4732)
+        percent=round(.4732*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.94 or zscore == -1.94:
+        print("Area: ", .4738)
+        percent=round(.4738*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.95 or zscore == -1.95:
+        print("Area: ", .4744)
+        percent=round(.4744*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.96 or zscore == -1.96:
+        print("Area: ", .4750)
+        percent=round(.4750*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.97 or zscore == -1.97:
+        print("Area: ", .4756)
+        percent=round(.4756*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.98 or zscore == -1.98:
+        print("Area: ", .4761)
+        percent=round(.4761*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 1.99 or zscore == -1.99:
+        print("Area: ", .4767)
+        percent=round(.4767*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.00 or zscore == -2.00:
+        print("Area: ", .4772)
+        percent=round(.4772*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.01 or zscore == -2.01:
+        print("Area: ", .4778)
+        percent=round(.4778*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.02 or zscore == -2.02:
+        print("Area: ", .4783)
+        percent=round(.4783*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.03 or zscore == -2.03:
+        print("Area: ", .4788)
+        percent=round(.4788*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.04 or zscore == -2.04:
+        print("Area: ", .4793)
+        percent=round(.4793*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.05 or zscore == -2.05:
+        print("Area: ", .4798)
+        percent=round(.4798*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.06 or zscore == -2.06:
+        print("Area: ", .4803)
+        percent=round(.4803*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.07 or zscore == -2.07:
+        print("Area: ", .4808)
+        percent=round(.4808*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.08 or zscore == -2.08:
+        print("Area: ", .4812)
+        percent=round(.4812*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.09 or zscore == -2.09:
+        print("Area: ", .4817)
+        percent=round(.4817*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.10 or zscore == -2.10:
+        print("Area: ", .4821)
+        percent=round(.4821*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.11 or zscore == -2.11:
+        print("Area: ", .4826)
+        percent=round(.4826*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.12 or zscore == -2.12:
+        print("Area: ", .4830)
+        percent=round(.4830*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.13 or zscore == -2.13:
+        print("Area: ", .4834)
+        percent=round(.4834*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.14 or zscore == -2.14:
+        print("Area: ", .4838)
+        percent=round(.4838*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.15 or zscore == -2.15:
+        print("Area: ", .4842)
+        percent=round(.4842*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.16 or zscore == -2.16:
+        print("Area: ", .4846)
+        percent=round(.4846*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.17 or zscore == -2.17:
+        print("Area: ", .4850)
+        percent=round(.4850*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.18 or zscore == -2.18:
+        print("Area: ", .4854)
+        percent=round(.4854*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.19 or zscore == -2.19:
+        print("Area: ", .4857)
+        percent=round(.4857*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.20 or zscore == -2.20:
+        print("Area: ", .4861)
+        percent=round(.4861*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.21 or zscore == -2.21:
+        print("Area: ", .4864)
+        percent=round(.4864*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.22 or zscore == -2.22:
+        print("Area: ", .4868)
+        percent=round(.4861*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.23 or zscore == -2.23:
+        print("Area: ", .4871)
+        percent=round(.4871*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.24 or zscore == -2.24:
+        print("Area: ", .4875)
+        percent=round(.4875*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.25 or zscore == -2.25:
+        print("Area: ", .4878)
+        percent=round(.4878*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.26 or zscore == -2.26:
+        print("Area: ", .4881)
+        percent=round(.4881*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.27 or zscore == -2.27:
+        print("Area: ", .4884)
+        percent=round(.4884*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.28 or zscore == -2.28:
+        print("Area: ", .4887)
+        percent=round(.4887*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.29 or zscore == -2.29:
+        print("Area: ", .4890)
+        percent=round(.4890*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.30 or zscore == -2.30:
+        print("Area: ", .4893)
+        percent=round(.4893*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.31 or zscore == -2.31:
+        print("Area: ", .4896)
+        percent=round(.4896*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.32 or zscore == -2.32:
+        print("Area: ", .4898)
+        percent=round(.4898*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.33 or zscore == -2.33:
+        print("Area: ", .4901)
+        percent=round(.4901*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.34 or zscore == -2.34:
+        print("Area: ", .4904)
+        percent=round(.4904*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.35 or zscore == -2.35:
+        print("Area: ", .4906)
+        percent=round(.4906*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.36 or zscore == -2.36:
+        print("Area: ", .4909)
+        percent=round(.4909*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.37 or zscore == -2.37:
+        print("Area: ", .4911)
+        percent=round(.4911*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.38 or zscore == -2.38:
+        print("Area: ", .4913)
+        percent=round(.4913*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.39 or zscore == -2.39:
+        print("Area: ", .4916)
+        percent=round(.4916*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.40 or zscore == -2.40:
+        print("Area: ", .4918)
+        percent=round(.4918*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.41 or zscore == -2.41:
+        print("Area: ", .4920)
+        percent=round(.4920*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.42 or zscore == -2.42:
+        print("Area: ", .4922)
+        percent=round(.4922*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.43 or zscore == -2.43:
+        print("Area: ", .4925)
+        percent=round(.4925*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.44 or zscore == -2.44:
+        print("Area: ", .4927)
+        percent=round(.4927*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.45 or zscore == -2.45:
+        print("Area: ", .4929)
+        percent=round(.4929*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.46 or zscore == -2.46:
+        print("Area: ", .4931)
+        percent=round(.4931*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.47 or zscore == -2.47:
+        print("Area: ", .4932)
+        percent=round(.4932*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.48 or zscore == -2.48:
+        print("Area: ", .4934)
+        percent=round(.4934*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.49 or zscore == -2.49:
+        print("Area: ", .4936)
+        percent=round(.4936*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.50 or zscore == -2.50:
+        print("Area: ", .4938)
+        percent=round(.4838*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.51 or zscore == -2.51:
+        print("Area: ", .4940)
+        percent=round(.4940*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.52 or zscore == -2.52:
+        print("Area: ", .4941)
+        percent=round(.4941*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.53 or zscore == -2.53:
+        print("Area: ", .4943)
+        percent=round(.4943*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.54 or zscore == -2.54:
+        print("Area: ", .4945)
+        percent=round(.4945*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.55 or zscore == -2.55:
+        print("Area: ", .4946)
+        percent=round(.4946*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.56 or zscore == -2.56:
+        print("Area: ", .4948)
+        percent=round(.4948*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.57 or zscore == -2.57:
+        print("Area: ", .4949)
+        percent=round(.4949*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.58 or zscore == -2.58:
+        print("Area: ", .4951)
+        percent=round(.4951*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.59 or zscore == -2.59:
+        print("Area: ", .4952)
+        percent=round(.4952*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.60 or zscore == -2.60:
+        print("Area: ", .4953)
+        percent=round(.4953*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.61 or zscore == -2.61:
+        print("Area: ", .4955)
+        percent=round(.4955*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.62 or zscore == -2.62:
+        print("Area: ", .4956)
+        percent=round(.4956*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.63 or zscore == -2.63:
+        print("Area: ", .4957)
+        percent=round(.4957*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.64 or zscore == -2.64:
+        print("Area: ", .4959)
+        percent=round(.4959*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.65 or  zscore == -2.65:
+        print("Area: ", .4960)
+        percent=round(.4960*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.66 or zscore == -2.66:
+        print("Area: ", .4961)
+        percent=round(.4961*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.67 or zscore == -2.67:
+        print("Area: ", .4962)
+        percent=round(.4962*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.68 or zscore == 2.68:
+        print("Area: ", .4963)
+        percent=round(.4963*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.69 or zscore == -2.69:
+        print("Area: ", .4964)
+        percent=round(.4964*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.70 or zscore == -2.70:
+        print("Area: ", .4965)
+        percent=round(.4965*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.71 or zscore == -2.71:
+        print("Area: ", .4966)
+        percent=round(.4966*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.72 or zscore == -2.72:
+        print("Area: ", .4967)
+        percent=round(.4967*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.73 or zscore == -2.73:
+        print("Area: ", .4968)
+        percent=round(.4968*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.74 or zscore == -2.74:
+        print("Area: ", .4969)
+        percent=round(.4969*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.75 or zscore == -2.75:
+        print("Area: ", .4970)
+        percent=round(.4970*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.76 or zscore == -2.76:
+        print("Area: ", .4971)
+        percent=round(.4971*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.77 or zscore == -2.77:
+        print("Area: ", .4972)
+        percent=round(.4972*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.78 or zscore == -2.78:
+        print("Area: ", .4973)
+        percent=round(.4973*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.79 or zscore == -2.79:
+        print("Area: ", .4974)
+        percent=round(.4974*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.80 or zscore == -2.80:
+        print("Area: ", .4974)
+        percent=round(.4974*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.81 or zscore == -2.81:
+        print("Area: ", .4975)
+        percent=round(.4975*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.82 or zscore == -2.82:
+        print("Area: ", .4976)
+        percent=round(.4976*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.83 or zscore == -2.83:
+        print("Area: ", .4977)
+        percent=round(.4977*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.84 or zscore == -2.84:
+        print("Area: ", .4977)
+        percent=round(.4977*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.85 or zscore == -2.85:
+        print("Area: ", .4978)
+        percent=round(.4978*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.86 or zscore == -2.86:
+        print("Area: ", .4979)
+        percent=round(.4979*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.87 or zscore == -2.87:
+        print("Area: ", .4979)
+        percent=round(.4979*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.88 or zscore == -2.88:
+        print("Area: ", .4980)
+        percent=round(.4980*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.89 or zscore == -2.89:
+        print("Area: ", .4981)
+        percent=round(.4981*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.90 or zscore == -2.90:
+        print("Area: ", .4981)
+        percent=round(.4981*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.91 or zscore == -2.91:
+        print("Area: ", .4982)
+        percent=round(.4982*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.92 or zscore == -2.92:
+        print("Area: ", .4982)
+        percent=round(.4982*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.93 or zscore == -2.93:
+        print("Area: ", .4983)
+        percent=round(.4983*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.94 or zscore == -2.94:
+        print("Area: ", .4984)
+        percent=round(.4984*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.95 or zscore == -2.95:
+        print("Area: ", .4984)
+        percent=round(.4984*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.96 or zscore == -2.96:
+        print("Area: ", .4985)
+        percent=round(.4985*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.97 or zscore == -2.97:
+        print("Area: ", .4985)
+        percent=round(.4985*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.98 or zscore == -2.98:
+        print("Area: ", .4986)
+        percent=round(.4986*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 2.99 or zscore == -2.99:
+        print("Area: ", .4986)
+        percent=round(.4986*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 3.00 or zscore == -3.00:
+        print("Area: ", .4987)
+        percent=round(.4987*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 3.01 or zscore == -3.01:
+        print("Area: ", .4987)
+        percent=round(.4987*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 3.02 or zscore == -3.02:
+        print("Area: ", .4987)
+        percent=round(.4987*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 3.03 or zscore == -3.03:
+        print("Area: ", .4988)
+        percent=round(.4988*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 3.04 or zscore == -3.04:
+        print("Area: ", .4988)
+        percent=round(.4988*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 3.05 or zscore == -3.05:
+        print("Area: ", .4989)
+        percent=round(.4989*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 3.06 or zscore == -3.06:
+        print("Area: ", .4989)
+        percent=round(.4989*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore == 3.07 or zscore == -3.07:
+        print("Area: ", .4989)
+        percent=round(.4989*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore >= 3.08 and zscore <= 3.10 or zscore <= -3.08 and zscore >= -3.10:
+        print("Area: ", .4990)
+        percent=round(.4990*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore >= 3.11 and zscore <= 3.13 or zscore <= -3.11 and zscore >= -3.13:
+        print("Area: ", .4991)
+        percent=round(.4991*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore >= 3.14 and zscore <= 3.17 or zscore <= -3.14 and zscore >= -3.17:
+        print("Area: ", .4992)
+        percent=round(.4992*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore >= 3.18 and zscore <= 3.21 or zscore <= -3.18 and zscore >= -3.21:
+        print("Area: ", .4993)
+        percent=round(.4993*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore >= 3.22 and zscore <= 3.26 or zscore <= -3.22 and zscore >= -3.26:
+        print("Area: ", .4994)
+        percent=round(.4994*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore >= 3.27 and zscore <= 3.32 or zscore <= -3.27 and zscore >= -3.32:
+        print("Area: ", .4995)
+        percent=round(.4995*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore >= 3.33 and zscore <= 3.38 or zscore <= -3.33 and zscore >= -3.38:
+        print("Area: ", .4996)
+        percent=round(.4996*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore >= 3.39 and zscore <= 3.48 or zscore <= -3.39 and zscore >= -3.48:
+        print("Area: ", .4997)
+        percent=round(.4997*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore >= 3.49 and zscore <= 3.62 or zscore <= -3.49 and zscore >= -3.62:
+        print("Area: ", .4998)
+        percent=round(.4998*100, 2)
+        print("Percentage:" ,percent,"%")
+
+    elif zscore >= 3.63 or zscore <= -3.63:
+        print("Area: ", .4999)
+        percent=round(.4999*100, 2)
+        print("Percentage:" ,percent,"%")
+        
+    print("\nThrough the formula for computing the z-score given by z = (x-μ)/σ, in which the value of x is the raw score, μ represent the population mean, and σ as the population standard deviation, computing z-score is as it follows: ")
+    print("\n1. Complete the values for raw score (x), population mean (μ), and population standard deviation (σ).")
+    print("\nz = (x-μ)/σ", "\n\nx =", rawscore, "\nμ =", mean, "\nσ =", sd, "\n\nz =", "(", rawscore, "-", mean, ")", "/", sd)
+    print("\n2. Solve for the equation inside the parenthesis. Simply, subtract the raw score (x) and the population mean (μ).")
+    print("\nz = (x-μ)")
+    print("  =", "(", rawscore, "-", mean, ")")
+    print("  =", (rawscore-mean))
+    print("\n3. After getting the difference of raw score (x) to the population mean (μ), divide the value to the standard deviation (σ). If the answer is in decimal form, round off to the nearest hundredths for the final answer.")
+    print("\nz =", (rawscore-mean), "/", sd)
+    print("  =", zscore_1)
+    print("\nTherefore, z-score is equal to ", zscore, ".", sep="")
+    print("\n4. Use the z-table to find the area of the given z-score.")
+
+    print("\n\n\n\n\t\t\t\t\t\t\t\t\t\tZ-SCORE TO RAW SCORE: ")
+    print("Formula: ")
+    print("x = µ + Zσ")
+    print("\nSolution: ")
+    print(mean, "+", "(", zscore_1, ")", "(", sd, ")", "=", rawscore_1)
+    print("\nRaw score: ", rawscore_2)
+
+    print("\nAs for the formula for computing the raw score given by x = µ + Zσ, which the value of Z is the z-score value, μ as the population mean and σ for population standard deviation, computing the raw score is as it follows:")
+    print("\n1. Complete the values for z-score (Z), population mean (μ), and population standard deviation (σ).")
+    print("\nx = µ + Zσ", "\n\nμ =", mean, "\nZ =", zscore_1, "\nσ =", sd, "\n\nx =", mean, "+", "(", zscore_1, ")", "(", sd, ")")
+    print("\n2. Solve for the two values in the parenthesis. Simply, multiply the z-score (Z) and the population standard deviation (σ).")
+    print("\nx = Zσ")
+    print("  =", "(", zscore_1, ")", "(", sd, ")")
+    print("  =", (zscore_1*sd))
+    print("\n3. After getting the product of z-score (Z) and the population standard deviation (σ), add the value to the population mean (μ). If the answer is in decimal form, round off to the nearest hundredths for the final answer.")
+    print("\nx =", mean, "+", (zscore_1*sd))
+    print("  =", rawscore_2)
+    print("\nTherefore, raw score is equal to ", rawscore_2, ".", sep="")
+    import random
+    jokes=["A statistician can have his head in an oven and his feet in ice, and he will say that on the average he feels fine.", "You're not an outlier; you just haven’t found your distribution yet!", "What did the z distribution say to the t distribution? You may look like me but you're not normal.", "Statistics show that those who celebrate more birthdays live longer.", "Statistics is the art of never having to say you're wrong.", "You can't prove everything with statistics, but you can always find something good (or bad) to say.", "You can't prove everything with statistics, but you can always find something good (or bad) to say.", "Numbers are like people; torture them enough and they'll tell you anything."]
+    quotes=random.choice(jokes)
+    print("\n\n\tToday's quote:",quotes)
